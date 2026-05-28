@@ -1,6 +1,6 @@
 const taskService = require('../services/taskService');
 
-// Função auxiliar para ler body
+//Função auxiliar para ler body
 const getRequestBody = (req) => {
   return new Promise((resolve, reject) => {
     let body = '';
@@ -15,7 +15,7 @@ const getRequestBody = (req) => {
   });
 };
 
-// Criar tarefa
+//Criar tarefa
 const createTask = async (req, res) => {
   const body = await getRequestBody(req);
 
@@ -25,7 +25,7 @@ const createTask = async (req, res) => {
   res.end(JSON.stringify(task));
 };
 
-// Listar tarefas
+//Listar tarefas
 const listTasks = (req, res) => {
   const tasks = taskService.getTasks();
 
@@ -33,7 +33,7 @@ const listTasks = (req, res) => {
   res.end(JSON.stringify(tasks));
 };
 
-// Atualizar tarefa
+//Atualizar tarefa
 const updateTask = async (req, res, id) => {
     const body = await getRequestBody(req);
 
@@ -49,7 +49,7 @@ const updateTask = async (req, res, id) => {
     res.end(JSON.stringify(task));
 };
 
-// Deletar tarefa
+//Deletar tarefa
 const deleteTask = (req, res, id) => {
     const success = taskService.deleteTask(id);
 
