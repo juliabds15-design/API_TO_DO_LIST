@@ -1,22 +1,22 @@
 const http = require('http');
 
-// Importa as rotas
+//Importa as rotas
 const taskRoutes = require('./routes/tasks');
 
-// Cria servidor
+//Cria o servidor
 const server = http.createServer((req, res) => {
 
-  // Define cabeçalho JSON
+  //Define cabeçalho JSON
   res.setHeader('Content-Type', 'application/json');
 
-  // Chama o roteador
+  //Chama o roteador
   taskRoutes(req, res);
 });
 
-// Porta
+//Porta
 const PORT = 3000;
 
-// Inicia servidor
+//Inicia o servidor
 server.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
